@@ -3,7 +3,7 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "matrix": "github:calliope-net/matrix#v0.3.7"
+        "matrix": "github:calliope-net/matrix#v0.3.10"
     },
     "files": [
         "main.blocks",

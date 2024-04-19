@@ -32,6 +32,19 @@ input.onButtonEvent(Button.A, ButtonEvent.Hold, function () {
     matrix.writeCharsetEEPROM()
     matrix.displayMatrix()
 })
+input.onButtonEvent(Button.B, ButtonEvent.Hold, function () {
+    basic.setLedColor(0x0000ff)
+    for (let Index = 0; Index <= 127; Index++) {
+        if (matrix.progEEPROM(matrix.fromHex("F880", NumberFormat.UInt16BE) + Index, 255)) {
+        	
+        } else {
+            basic.showString(matrix.formatHex(matrix.fromHex("F880", NumberFormat.UInt16BE) + Index, NumberFormat.UInt16BE))
+        }
+    }
+    matrix.clearMatrix()
+    matrix.writeCharsetEEPROM()
+    matrix.displayMatrix()
+})
 let adr = 0
 matrix.init(matrix.ePages.y128)
 matrix.displayMatrix()
